@@ -332,7 +332,7 @@ CloudVault
 
 Make sure the following are installed:
 
-* Java 17+
+* Java 21+
 * Maven
 * Node.js
 * npm
