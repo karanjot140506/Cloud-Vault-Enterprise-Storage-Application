@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: cloudvault-minio
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - cloudvault-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:latest
+    container_name: cloudvault-minio-init
+    depends_on:
+      - minio
+    networks:
+      - cloudvault-network
+    entrypoint: >
+      /bin/sh -c "
+      until (mc alias set myminio http://minio:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD}) do echo 'waiting for minio...' && sleep 2; done;
+      mc mb --ignore-existing myminio/$${MINIO_BUCKET_NAME};
+      mc version enable myminio/$${MINIO_BUCKET_NAME};
+      echo 'CloudVault bucket ready.';
+      exit 0;
+      "
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BUCKET_NAME: ${MINIO_BUCKET_NAME}
+
+volumes:
+  minio_data:
+    driver: local
+
+networks:
+  cloudvault-network:
+    external: true
+    name: cloudvault-network

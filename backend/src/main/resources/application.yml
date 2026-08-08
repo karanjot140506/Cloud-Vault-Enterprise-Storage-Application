@@ -1,0 +1,56 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: cloudvault-backend
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: cloudvault_db
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+
+logging:
+  level:
+    com.cloudvault.backend: DEBUG
+
+
+# JWT Configuration
+jwt:
+  secret: cloudvault-super-secret-key-for-jwt-signing-change-this-in-production-1234567890
+  expiration: 900000
+
+
+# Refresh Token
+refresh-token:
+  expiration: 604800000
+
+
+# File Configuration
+file:
+  upload-dir: ./uploads
+  max-size: 10485760
+
+# MinIO Configuration
+minio:
+  url: http://localhost:9000
+  access-key: minioadmin
+  secret-key: minioadmin123
+  bucket: cloudvault-files
