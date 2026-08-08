@@ -1,204 +1,436 @@
 # ☁️ CloudVault
 
-> **A secure enterprise cloud storage platform for efficient file management, collaboration, and role-based access control.**
+<h3 align="center">
+Enterprise Cloud Storage Platform
+</h3>
 
-![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)
-![Backend](https://img.shields.io/badge/Backend-Spring%20Boot-success?style=for-the-badge)
-![Database](https://img.shields.io/badge/Database-MongoDB-green?style=for-the-badge)
-![Frontend](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+<p align="center">
+A secure, scalable and modern cloud storage application built with 
+Spring Boot, React, MongoDB and DevOps practices.
+</p>
 
----
 
-## 📖 About
+<p align="center">
 
-CloudVault is an enterprise-grade cloud storage platform that enables users to securely upload, organize, manage, and share files with role-based access control and scalable architecture.
+<img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk"/>
+<img src="https://img.shields.io/badge/Spring%20Boot-3.x-green?style=for-the-badge&logo=springboot"/>
+<img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react"/>
+<img src="https://img.shields.io/badge/MongoDB-Database-green?style=for-the-badge&logo=mongodb"/>
+<img src="https://img.shields.io/badge/Docker-Containerization-blue?style=for-the-badge&logo=docker"/>
+<img src="https://img.shields.io/badge/JWT-Security-black?style=for-the-badge"/>
 
----
+</p>
 
-## 🚀 Current Status
-
-**Project Phase:** 🛠️ Initial Development
-
-This project is currently under active development by a team of three developers following an enterprise GitHub workflow.
-
----
-
-## 👥 Team Structure
-
-- 👨‍💻 Backend Developer
-- 🎨 Frontend Developer
-- ⚙️ DevOps Engineer
 
 ---
 
-## 🛠️ Tech Stack
+# 🌟 Overview
 
-### Backend
-- Java 21
-- Spring Boot
-- Spring Security
-- JWT Authentication
-- MongoDB
-- Redis
-- MinIO
+**CloudVault** is an enterprise-level cloud storage platform that allows users to securely upload, manage, organize and access their files from anywhere.
 
-### Frontend
-- React
-- Vite
-- Tailwind CSS
-- Axios
+The application follows a modern full-stack architecture with a secure backend, responsive frontend and containerized deployment approach.
 
-### DevOps
-- Docker
-- Docker Compose
-- GitHub Actions
-- Nginx
+The main objective of this project is to design and implement a real-world cloud storage system with authentication, file management, cloud storage integration and production-ready development practices.
+
 
 ---
 
-## 📂 Project Structure
+# 🚀 Key Features
 
-```text
-CloudVault/
-│
-├── backend/
-├── frontend/
-├── devops/
-└── README.md
+
+## 🔐 Authentication & Security
+
+✅ User Registration & Login  
+✅ JWT Based Authentication  
+✅ Secure Password Encryption using BCrypt  
+✅ Protected Routes  
+✅ Role Based Authorization  
+
+
+---
+
+## 📂 File Management
+
+✅ Upload Files  
+✅ Download Files  
+✅ Delete Files  
+✅ Restore Deleted Files  
+✅ Recycle Bin Management  
+✅ File Metadata Storage  
+✅ File Organization  
+
+
+---
+
+## ☁️ Storage System
+
+✅ Secure File Storage  
+✅ Metadata Management using MongoDB  
+✅ Scalable Storage Architecture  
+✅ File Access Control  
+
+
+---
+
+## 🎨 Frontend Experience
+
+✅ Modern Responsive UI  
+✅ Dashboard Interface  
+✅ File Explorer Design  
+✅ Smooth User Experience  
+✅ Component Based Architecture  
+
+
+---
+
+## ⚙️ DevOps & Deployment
+
+✅ Docker Containerization  
+✅ Docker Compose Setup  
+✅ Environment Based Configuration  
+✅ Git Based Development Workflow  
+
+
+---
+
+# 🏗️ System Architecture
+
+
+```
+                         User
+                           |
+                           |
+                    React Frontend
+                           |
+                           |
+                    REST API Layer
+                           |
+                           |
+                  Spring Boot Backend
+                           |
+          --------------------------------
+          |                              |
+          |                              |
+      MongoDB                     File Storage
+   (Metadata/Data)                (Objects)
+
 ```
 
+
 ---
 
-## ▶️ Getting Started (Run Locally)
+# 🛠️ Technology Stack
 
-The frontend is a Vite/React app and the backend is a Spring Boot API backed by
-MongoDB. They're wired together as follows:
 
-- Backend runs on `http://localhost:8080`, API base path `/api/v1`
-- Frontend runs on `http://localhost:5173` (Vite default) and talks to the
-  backend via `VITE_API_BASE_URL` (see `frontend/.env`)
-- CORS on the backend (`SecurityConfig`) is configured to allow
-  `http://localhost:5173` — update it if you serve the frontend elsewhere
+## Backend
 
-### 1. Start MongoDB
+| Technology | Purpose |
+|------------|---------|
+| Java | Core Programming Language |
+| Spring Boot | Backend Framework |
+| Spring Security | Application Security |
+| JWT | Authentication |
+| Spring Data MongoDB | Database Integration |
+| REST APIs | Communication Layer |
 
-The backend needs a MongoDB instance at `localhost:27017` (database
-`cloudvault_db`). The easiest way:
+
+---
+
+## Frontend
+
+| Technology | Purpose |
+|------------|---------|
+| React.js | UI Development |
+| JavaScript | Frontend Logic |
+| Axios | API Communication |
+| Tailwind CSS | Styling |
+
+
+---
+
+## Database
+
+| Technology | Purpose |
+|------------|---------|
+| MongoDB | User & File Metadata Storage |
+
+
+---
+
+## DevOps
+
+| Technology | Purpose |
+|------------|---------|
+| Docker | Containerization |
+| Docker Compose | Multi Container Setup |
+| Git/GitHub | Version Control |
+
+
+---
+
+# 📁 Project Structure
+
+
+```
+CloudVault
+│
+├── backend
+│   │
+│   ├── src/main/java
+│   │
+│   ├── pom.xml
+│   │
+│   └── application.properties
+│
+│
+├── frontend
+│   │
+│   ├── src
+│   │
+│   ├── package.json
+│
+│
+├── docker-compose.yml
+│
+├── README.md
+│
+└── .gitignore
+
+```
+
+
+---
+
+# ⚡ Installation & Setup
+
+
+## 1. Clone Repository
+
 
 ```bash
-docker compose up -d
+git clone https://github.com/yourusername/CloudVault.git
 ```
 
-(uses the `docker-compose.yml` at the project root). Alternatively, point
-`backend/src/main/resources/application.yml` at your own MongoDB instance.
 
-### 2. Run the backend
+Move into project:
+
+```bash
+cd CloudVault
+```
+
+
+---
+
+# 🔧 Backend Setup
+
+
+Navigate to backend:
 
 ```bash
 cd backend
-./mvnw spring-boot:run
 ```
 
-The API will be available at `http://localhost:8080/api/v1`, with Swagger UI
-at `http://localhost:8080/swagger-ui.html`.
 
-### 3. Run the frontend
+Install dependencies:
+
+```bash
+mvn clean install
+```
+
+
+Run Spring Boot application:
+
+
+```bash
+mvn spring-boot:run
+```
+
+
+Backend will start on:
+
+```
+http://localhost:8080
+```
+
+
+---
+
+# 🎨 Frontend Setup
+
+
+Navigate to frontend:
+
 
 ```bash
 cd frontend
+```
+
+
+Install packages:
+
+
+```bash
 npm install
+```
+
+
+Run application:
+
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:5173`, register an account, and log in.
 
-### Notes
-
-- The backend issues short-lived access tokens (15 min) plus a 7-day refresh
-  token; the frontend automatically refreshes expired access tokens.
-- Uploaded files are stored on disk under `backend/uploads` by default
-  (configurable via `file.upload-dir` in `application.yml`).
-
----
-
-## 📅 Development Roadmap
-
-### ✅ Week 1
-- [ ] Project Setup
-- [ ] Backend Initialization
-- [ ] Frontend Initialization
-- [ ] Docker Setup
-- [ ] Authentication Module
-
-### ✅ Week 2
-- [ ] File Upload
-- [ ] File Download
-- [ ] Folder Management
-- [ ] MongoDB Integration
-- [ ] MinIO Integration
-
-### ✅ Week 3
-- [ ] File Sharing
-- [ ] Role-Based Access Control
-- [ ] File Versioning
-- [ ] Audit Logs
-- [ ] Deployment
-
----
-
-## 🌳 Git Workflow
+Frontend will start on:
 
 ```
-main
-│
-├── develop
-│
-├── feature/backend-*
-├── feature/frontend-*
-└── feature/devops-*
+http://localhost:5173
 ```
 
----
-
-## 📌 Daily Progress
-
-### Day 1
-- ✅ Repository Created
-- ✅ Team Setup
-- ✅ Project Planning
-- ✅ Tech Stack Finalized
-
-> More updates will be added daily.
 
 ---
 
-## 🎯 Project Objective
+# 🐳 Docker Setup
 
-Build a secure, scalable, and enterprise-grade cloud storage platform for efficient file management, collaboration, and access control.
 
----
+Build and run containers:
 
-## 🚧 Project Status
 
-This project is actively being developed. New features, documentation, and updates will be pushed daily.
+```bash
+docker-compose up --build
+```
 
----
 
-## 🤝 Contributing
+Stop containers:
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push your branch
-5. Open a Pull Request
 
----
+```bash
+docker-compose down
+```
 
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
-⭐ If you like this project, consider giving it a Star!
+# 🔑 Environment Configuration
+
+
+## Backend
+
+Create:
+
+```
+application.properties
+```
+
+
+Add:
+
+
+```properties
+spring.data.mongodb.uri=YOUR_MONGODB_URI
+
+jwt.secret=YOUR_SECRET_KEY
+
+storage.access.key=YOUR_ACCESS_KEY
+
+storage.secret.key=YOUR_SECRET_KEY
+```
+
+
+---
+
+## Frontend
+
+
+Create:
+
+```
+.env
+```
+
+
+Add:
+
+
+```env
+VITE_API_URL=http://localhost:8080/api
+```
+
+
+---
+
+# 📸 Screenshots
+
+
+## Login Page
+
+Add screenshot here
+
+
+---
+
+## Dashboard
+
+Add screenshot here
+
+
+---
+
+## File Management
+
+Add screenshot here
+
+
+---
+
+# 🔮 Future Enhancements
+
+
+🚀 Cloud Deployment on AWS/Azure  
+🚀 File Sharing with Public Links  
+🚀 Email Notifications  
+🚀 File Preview System  
+🚀 Search & Filtering  
+🚀 CI/CD Pipeline  
+🚀 Kubernetes Deployment  
+
+
+---
+
+# 📚 Learning Outcomes
+
+
+Through this project I gained practical experience in:
+
+
+✅ Designing Full Stack Applications  
+✅ Building RESTful APIs using Spring Boot  
+✅ Implementing JWT Authentication  
+✅ Working with MongoDB Database Design  
+✅ Containerizing Applications using Docker  
+✅ Following Production Level Development Practices  
+
+
+---
+
+# 👨‍💻 Author
+
+
+## Garvit Malik
+
+
+Java Backend Developer | Full Stack Developer
+
+
+### Skills
+
+Java • Spring Boot • React • MongoDB • Docker • REST APIs • System Design
+
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
