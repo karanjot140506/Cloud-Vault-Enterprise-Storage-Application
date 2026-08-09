@@ -677,7 +677,7 @@ The following features can be added in future versions:
 
 # 👨‍💻 Author
 
-## Garvit Malik
+## Karanjot Singh
 
 **Java Backend Developer | Full Stack Developer**
 
